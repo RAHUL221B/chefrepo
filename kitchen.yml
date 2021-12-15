@@ -1,6 +1,12 @@
 ---
 driver:
-  name: vagrant
+  name: ec2
+  region: ap-south-1
+  availability_zone: ap-south-1a
+  subnet_id: subnet-01e5f1fd876952a42
+  instance_type: t2.micro
+  image_id: ami-0567e0d2b4b2169ae
+  security_group_ids: ["sg-06b0c11e770afd747"]
 
 ## The forwarded_port port feature lets you connect to ports on the VM guest via
 ## localhost on the host.
@@ -21,12 +27,23 @@ provisioner:
   #  product_name: chef
   #  product_version: 17
 
+transport:
+  ssh_key: ./ubuntu.pem
+  connection_timeout: 10
+  connection_retries: 5
+  username: ubuntu
+
 verifier:
   name: inspec
 
 platforms:
   - name: ubuntu-20.04
-  - name: centos-8
+  - name: centos-7
+    driver:
+      image_id: ami-026f33d38b6410e30
+    transport:
+      username: centos
+      ssh_key: ubuntu.pem
 
 suites:
   - name: default
