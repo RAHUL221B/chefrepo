@@ -12,7 +12,7 @@ if node['platform'] == 'centos'
   all_packages = %w(httpd php php-mysql php-fpm)
 end
 
-if node['platform'] == 'ubuntu'
+if platform?('ubuntu')
   apt_update 'update ubuntu packages' do
     ignore_failure true
     action :update
