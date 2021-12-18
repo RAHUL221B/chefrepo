@@ -11,7 +11,6 @@
 
 user node['tomcat9']['username'] do
     comment 'comment'
-    gid node['tomcat9']['groupname']
     home node['tomcat9']['userhome']
     shell node['tomcat9']['usershell']
     action :create

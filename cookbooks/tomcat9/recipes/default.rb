@@ -7,3 +7,4 @@
 
 
 include_recipe 'tomcat9::java'
+include_recipe 'tomcat9::configure'
