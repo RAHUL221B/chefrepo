@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Chef
 .chef/*.pem
 .chef/encrypted_data_bag_secret
@@ -50,3 +51,30 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
+=======
+.vagrant
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+
+# Bundler
+Gemfile.lock
+gems.locked
+bin/*
+.bundle/*
+
+# test kitchen
+.kitchen/
+kitchen.local.yml
+
+# Chef Infra
+Berksfile.lock
+.zero-knife.rb
+Policyfile.lock.json
+
+.idea/
+
+>>>>>>> 25fda58... Add generated cookbook content
