@@ -55,3 +55,14 @@ user_name = node['tomcat9']['username']
     command "sudo chmod +x #{node['tomcat9']['tomcatdir']}/bin/*.sh"
     action :nothing
   end
+
+  cookbook_file "#{node['tomcat9']['tomcatservicelocation']}" do
+    source 'tomcat.service'
+    action :create
+    notifies :reload, 'service[tomcat]', :immediately
+    notifies :enable, 'service[tomcat]', :immediately
+  end
+  
+  service 'tomcat' do
+    action :start
+  end
