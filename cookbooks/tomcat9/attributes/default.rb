@@ -1,6 +1,7 @@
 
 if platform?('ubuntu')
     defult['tomcat9']['java_package'] = 'openjdk-11-jdk'
+    default['tomcat9']['java_home'] = '/usr/lib/jvm/java-11-openjdk-amd64'
 end    
 
 
