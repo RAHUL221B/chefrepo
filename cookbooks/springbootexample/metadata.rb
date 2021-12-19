@@ -18,3 +18,4 @@ chef_version '>= 16.0'
 #
 # source_url 'https://github.com/<insert_org_here>/springbootexample'
 depends 'mysql', '~> 11.0.0'
+depends 'nginx', '~> 12.0.7'
