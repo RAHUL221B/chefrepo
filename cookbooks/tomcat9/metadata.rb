@@ -17,3 +17,6 @@ chef_version '>= 16.0'
 # a Supermarket.
 #
 # source_url 'https://github.com/<insert_org_here>/tomcat9'
+
+supports 'centos', '>= 7.0'
+supports 'ubuntu', '>= 20.04'
